@@ -41,6 +41,13 @@
             tapping-term-ms = <200>;
             bindings = <&sk>, <&kp>;
         };
+
+        td_ctrl_shft: td_ctrl_shft {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LGUI>, <&kp LSHFT>;
+        };
     };
 
     keymap {
@@ -56,8 +63,8 @@
             bindings = <
 &kp TAB    &q_ht TAB 0  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &kp LCTRL  &a_ht ESC A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &lt 1 Z  &kp X  &kp C     &kp V  &b_sk_ht LSHFT B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp BSPC  &kp LCTRL  &kp LGUI    &kp RET  &mo 2  &kp SPACE
+&kp LSHFT  &lt 1 Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                         &kp BSPC  &kp LCTRL  &td_ctrl_shft    &kp RET  &mo 2  &kp SPACE
             >;
         };
 
