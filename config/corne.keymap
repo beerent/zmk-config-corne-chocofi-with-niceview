@@ -46,7 +46,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LGUI>, <&kp LSHFT>;
+            bindings = <&kp LSHFT>, <&kp LGUI>;
         };
 
         td_shft_layer3: td_shft_layer3 {
