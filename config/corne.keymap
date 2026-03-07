@@ -48,6 +48,13 @@
             tapping-term-ms = <200>;
             bindings = <&kp LGUI>, <&kp LSHFT>;
         };
+
+        td_ctrl_layer2: td_ctrl_layer2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LCTRL>, <&mo 2>;
+        };
     };
 
     keymap {
@@ -63,8 +70,8 @@
             bindings = <
 &kp TAB    &q_ht TAB 0  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &kp LCTRL  &a_ht ESC A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &lt 1 Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp BSPC  &kp LCTRL  &td_ctrl_shft    &kp RET  &mo 2  &kp SPACE
+&kp LSHFT  &lt 1 Z  &lt 2 X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                         &kp BSPC  &td_ctrl_layer2  &td_ctrl_shft    &kp RET  &mo 2  &kp SPACE
             >;
         };
 
@@ -76,9 +83,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &studio_unlock  &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
+&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp PIPE  &kp EQUAL  &kp PLUS   &kp DQT    &kp SQT  &kp BSPC
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LT     &kp LBRC  &kp LBKT  &kp LPAR   &kp MINUS  &trans
+&kp LSHFT   &studio_unlock  &trans        &trans        &trans        &trans          &kp GT     &kp RBRC  &kp RBKT  &kp RPAR   &kp UNDER  &trans
                                         &kp LGUI      &trans        &bootloader       &bootloader   &trans    &kp RALT
             >;
         };
