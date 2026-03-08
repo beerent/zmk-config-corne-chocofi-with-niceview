@@ -62,6 +62,13 @@
             tapping-term-ms = <200>;
             bindings = <&kp LCTRL>, <&mo 2>;
         };
+
+        td_bspc_layer1: td_bspc_layer1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&lt 1 BSPC>, <&kp BSPC>;
+        };
     };
 
     keymap {
@@ -77,8 +84,8 @@
             bindings = <
 &kp TAB    &q_ht TAB 0  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &kp LCTRL  &a_ht ESC A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &lt 1 Z  &lt 2 X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp BSPC  &td_ctrl_layer2  &td_ctrl_shft    &kp RET  &td_shft_layer3  &kp SPACE
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                         &td_bspc_layer1  &mo 2  &td_ctrl_shft    &kp RET  &mo 3  &kp SPACE
             >;
         };
 
@@ -90,7 +97,7 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp PIPE  &kp EQUAL  &kp PLUS   &kp DQT    &kp SQT  &kp BSPC
+&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp PIPE  &kp EQUAL  &kp PLUS   &kp DQT    &kp DQT  &kp BSPC
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LT     &kp LBRC  &kp LBKT  &kp LPAR   &kp MINUS  &trans
 &kp LSHFT   &studio_unlock  &trans        &trans        &trans        &trans          &kp GT     &kp RBRC  &kp RBKT  &kp RPAR   &kp UNDER  &trans
                                         &kp LGUI      &trans        &bootloader       &bootloader   &trans    &kp RALT
@@ -105,9 +112,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL  &kp AT   &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp LEFT   &kp DOWN   &kp UP           &kp RIGHT &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &trans  &trans   &trans         &trans  &kp PIPE  &kp TILDE
+&kp TAB    &kp EXCL  &kp AT   &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp SQT   &kp BSPC
+&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp LEFT   &kp DOWN   &kp UP           &kp RIGHT &trans  &kp GRAVE
+&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &trans  &trans   &trans         &trans  &trans  &kp TILDE
                              &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
             >;
         };
