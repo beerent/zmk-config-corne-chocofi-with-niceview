@@ -29,8 +29,9 @@
         a_morph: a_morph {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp A>, <&kp LC(ESC)>;
-            mods = <(MOD_LGUI)>;
+            bindings = <&kp A>, <&kp ESC>;
+            mods = <(MOD_LCTL)>;
+            keep-mods = <(MOD_LCTL)>;
         };
 
         a_ht: a_ht {
